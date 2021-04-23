@@ -4,6 +4,8 @@ https://bradleyboehmke.github.io/HOML/intro.html
 
 ###  Regression problems
 
+Cool pic
+
 ### Classification problems
 
 ## Unsupervised learning
