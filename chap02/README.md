@@ -82,26 +82,11 @@ second method is to use a *validation* approach, which involves splitting the tr
 
 *k*-fold cross-validation (aka *k*-fold CV)
 
-The model is fit on### k
-### −
-### 1
-### k
-### −
-### 1
+The model is fit on k− 1
 folds and then the remaining fold is used to compute model performance.
 
-one typically uses### k
-### =
-### 5
-### k
-### =
-### 5
-or### k
-### =
-### 10
-### k
-### =
-### 10
+one typically uses k = 5
+or k = 10
 
 LOOCV
 
