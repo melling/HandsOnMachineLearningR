@@ -74,13 +74,13 @@ Meta engines provide you with more consistency in how you specify inputs and ext
 
 For meta engines, we’ll focus on the **caret** package in the hardcopy of the book while also demonstrating the newer **parsnip** package in the additional online resources.
 
-## 2.4 Resampling methods**
+## 2.4 Resampling methods
 
 second method is to use a *validation* approach, which involves splitting the training set further to create two parts (as in Section  [2.2](https://bradleyboehmke.github.io/HOML/process.html#splitting) ): a training set and a validation set (or *holdout set*).
 
 **Resampling methods** provide an alternative approach by allowing us to repeatedly fit a model of interest to parts of the training data and test its performance on other parts. The two most commonly used resampling methods include *k-fold cross validation* and *bootstrapping*.
 
-### 2.4.1 k-fold cross validation**
+### 2.4.1 k-fold cross validation
 
 
 *k*-fold cross-validation (aka *k*-fold CV)
@@ -112,7 +112,7 @@ DISCUSS
 
 many algorithms that are capable of achieving high generalization performance have lots of *hyperparameters* that control the level of model complexity (i.e., the tradeoff between bias and variance).
 
-### 2.5.3 Hyperparameter tuning**
+### 2.5.3 Hyperparameter tuning
 
 
 grid search - an automated approach to searching across many combinations of hyperparameter values.
@@ -126,15 +126,15 @@ Loss functions are metrics that compare the predicted values to the actual value
 
 ### 2.6.1 Regression models
 
-**MSE**: Mean squared error
+**MSE**: Mean squared error **Objective: minimize**
 
-**RMSE**: Root mean squared error
+**RMSE**: Root mean squared error **Objective: minimize**
 
-**Deviance**: Short for mean residual deviance. In essence, it provides a degree to which a model explains the variation in a set of data when using *maximum likelihood estimation*
+**Deviance**: Short for mean residual deviance. In essence, it provides a degree to which a model explains the variation in a set of data when using *maximum likelihood estimation* **Objective: minimize**
 
-**MAE**: Mean absolute error
+**MAE**: Mean absolute error **Objective: minimize**
 
-**RMSLE**: Root mean squared logarithmic error
+**RMSLE**: Root mean squared logarithmic error **Objective: minimize**
 
 **R^2**
 : This is a popular metric that represents the proportion of the variance in the dependent variable that is predictable from the independent variable(s). Unfortunately, it has several limitations
