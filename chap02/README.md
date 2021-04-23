@@ -1,4 +1,4 @@
-# Model Process
+# Chapter 2: Model Process
 
 https://bradleyboehmke.github.io/HOML/process.html
 
@@ -32,3 +32,103 @@ h2o.init()         # launch h2o
 
 can convert any R data frame to an H2O object (i.e., import it to the H2O cloud) 
 easily with as.h2o(<my-data-frame>)
+
+**generalizability**
+
+**Training set**
+
+**Test set**
+
+It is critical that the test set not be used prior to selecting your final model.
+
+The two most common ways of splitting data include **simple random sampling** and **stratified sampling**.
+
+### 2.2.1 Simple random sampling
+
+### 2.2.2 Stratified sampling
+
+If we want to explicitly control the sampling so that our training and test sets have similar### Y
+### Y
+distributions, we can use stratified sampling
+
+more common with classification problems where the response variable may be severely imbalanced (e.g., 90% of observations with response “Yes” and 10% with response “No”).
+
+we can also apply stratified sampling to regression problems for data sets that have a small sample size and where the response variable deviates strongly from normality (i.e., positively skewed like Sale_Price).
+
+## 2.3 Creating models in R
+
+
+### 2.3.1 Many formula interfaces
+
+Formula rules:Y ~ X where we say “Y is a function of X”.
+
+
+### 2.3.2 Many engines
+
+meta engines that can be used to help provide consistency.
+
+Meta engines provide you with more consistency in how you specify inputs and extract outputs but can be less flexible than direct engines.
+
+For meta engines, we’ll focus on the **caret** package in the hardcopy of the book while also demonstrating the newer **parsnip** package in the additional online resources.
+
+## 2.4 Resampling methods**
+
+second method is to use a *validation* approach, which involves splitting the training set further to create two parts (as in Section  [2.2](https://bradleyboehmke.github.io/HOML/process.html#splitting) ): a training set and a validation set (or *holdout set*).
+
+**Resampling methods** provide an alternative approach by allowing us to repeatedly fit a model of interest to parts of the training data and test its performance on other parts. The two most commonly used resampling methods include *k-fold cross validation* and *bootstrapping*.
+
+### 2.4.1 k-fold cross validation**
+
+
+*k*-fold cross-validation (aka *k*-fold CV)
+
+The model is fit on### k
+### −
+### 1
+### k
+### −
+### 1
+folds and then the remaining fold is used to compute model performance.
+
+one typically uses### k
+### =
+### 5
+### k
+### =
+### 5
+or### k
+### =
+### 10
+### k
+### =
+### 10
+
+LOOCV
+
+*k*-fold CV still tends to have higher variability than bootstrapping
+
+### 2.4.2 Bootstrapping
+
+DISCUSS 
+
+A bootstrap sample is a random sample of the data taken *with replacement*
+
+bootstrap sample is the same size as the original data set from which it was constructed.
+
+original observations not contained in a particular bootstrap sample are considered *out-of-bag* (OOB).
+
+
+## 2.5 Bias variance trade-off
+
+DISCUSS
+
+many algorithms that are capable of achieving high generalization performance have lots of *hyperparameters* that control the level of model complexity (i.e., the tradeoff between bias and variance).
+
+### 2.5.3 Hyperparameter tuning**
+
+
+grid search - an automated approach to searching across many combinations of hyperparameter values.
+
+## 2.6 Model evaluation
+
+
