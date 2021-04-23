@@ -1,5 +1,5 @@
 ---
-title: "q"
+title: "Hands On ML in R: Chapter 2"
 output: html_document
 ---
 
@@ -122,5 +122,43 @@ h2o.cv <- h2o::h2o.glm(
 
 ```{r vfold_cv}
 #h2o::h2o.vfold_cv(ames, v = 10)
+```
+
+## Bootstrapping
+
+```{r bootstraps}
+bootstraps(ames, times = 10)
+```
+
+# Stratified sampling with the rsample package
+```{r}
+set.seed(123)
+split <- initial_split(ames, prop = 0.7, 
+                       strata = "Sale_Price")
+ames_train  <- training(split)
+ames_test   <- testing(split)
+```
+
+## Train
+```{r}
+# Specify resampling strategy
+cv <- trainControl(
+  method = "repeatedcv", 
+  number = 10, 
+  repeats = 5
+)
+
+# Create grid of hyperparameter values
+hyper_grid <- expand.grid(k = seq(2, 25, by = 1))
+
+# Tune a knn model using grid search
+knn_fit <- train(
+  Sale_Price ~ ., 
+  data = ames_train, 
+  method = "knn", 
+  trControl = cv, 
+  tuneGrid = hyper_grid,
+  metric = "RMSE"
+)
 ```
 
