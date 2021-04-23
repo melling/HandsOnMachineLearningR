@@ -117,3 +117,30 @@ grid search - an automated approach to searching across many combinations of hyp
 ## 2.6 Model evaluation
 
 
+ it has become widely accepted that a more sound approach to assessing model performance is to assess the predictive accuracy via *loss functions*. 
+
+Loss functions are metrics that compare the predicted values to the actual value (the output of a loss function is often referred to as the *error* or pseudo *residual*).
+
+### 2.6.1 Regression models
+
+**MSE**: Mean squared error
+
+**RMSE**: Root mean squared error
+
+**Deviance**: Short for mean residual deviance. In essence, it provides a degree to which a model explains the variation in a set of data when using *maximum likelihood estimation*
+
+**MAE**: Mean absolute error
+
+**RMSLE**: Root mean squared logarithmic error
+
+**R^2**
+: This is a popular metric that represents the proportion of the variance in the dependent variable that is predictable from the independent variable(s). Unfortunately, it has several limitations
+
+**Objective: maximize**
+
+### 2.6.2 Classification models
+
+
+
+## 2.7 Putting the processes together
+
