@@ -106,15 +106,21 @@ table(test_strat$Attrition) %>% prop.table()
 
 # Example using h2o
 ```{r}
-x = c("Year_Sold", "Longitude", "Latitude)
+x = c("Year_Sold", "Longitude", "Latitude")
 y = "Sale_Price"
   # data = ames.h2o
 
-h2o.cv <- h2o.glm(
+h2o::h2o.init()
+
+h2o.cv <- h2o::h2o.glm(
   x = x, 
   y = y, 
   training_frame = ames.h2o,
   nfolds = 10  # perform 10-fold CV
 )
+```
+
+```{r vfold_cv}
+#h2o::h2o.vfold_cv(ames, v = 10)
 ```
 
