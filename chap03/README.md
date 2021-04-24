@@ -92,6 +92,67 @@ Standardizing features includes *centering* and *scaling* so that numeric variab
 ## 3.6 Categorical feature engineering
 
 
+Most models require that the predictors take numeric form. There are exceptions; for example, tree-based models naturally handle numeric or categorical features. However, even tree-based models can benefit from preprocessing categorical features
 
+### 3.6.1 Lumping
+
+Sometimes features will contain levels that have very few observations. For example, there are 28 unique neighborhoods represented in the Ames housing data but several of them only have a few observations.
+
+Sometimes we can benefit from collapsing, or “lumping” these into a lesser number of categories.
+
+Tree-based models often perform exceptionally well with high cardinality features and are not as impacted by levels with small representation
+
+### 3.6.2 One-hot & dummy encoding
+
+Many models require that all predictor variables be numeric. 
+
+The most common way to recode is referred to as one-hot encoding, where we transpose our categorical variables so that each level of the feature is represented as a boolean value
+
+*full rank* encoding
+
+this creates perfect collinearity which causes problems with some predictive modeling algorithms (e.g., ordinary linear regression and neural networks).
+
+Alternatively, we can create a full-rank encoding by dropping one of the levels (level c has been dropped). This is referred to as *dummy* encoding.
+
+Since one-hot encoding adds new features it can significantly increase the dimensionality of our data
+
+### 3.6.3 Label encoding
+
+*Label encoding* is a pure numeric conversion of the levels of a categorical variable. 
+
+If a categorical variable is a factor and it has pre-specified levels then the numeric conversion will be in level order. 
+
+If no levels are specified, the encoding will be based on alphabetical order. 
+
+### 3.6.4 Alternatives
+
+target encoding is the process of replacing a categorical value with the mean (regression) or proportion (classification) of the target variable.
+
+Target encoding runs the risk of *data leakage* since you are using the response variable to encode a feature
+
+## 3.7 Dimension reduction
+
+Dimension reduction is an alternative approach to filter out non-informative features without manually removing them
+
+## 3.8 Proper implementation
+
+we should think of feature engineering as creating a blueprint rather than manually performing each task individually. This helps us in two ways: (1) thinking sequentially and (2) to apply appropriately within the resampling process.
+
+### 3.8.1 Sequential steps
+
+here is a suggested order of potential steps that should work for most problems:
+
+    1	Filter out zero or near-zero variance features.
+    2	Perform imputation if required.
+    3	Normalize to resolve numeric feature skewness.
+    4	Standardize (center and scale) numeric features.
+    5	Perform dimension reduction (e.g., PCA) on numeric features.
+    6	One-hot or dummy encode categorical features.
+
+### 3.8.2 Data leakage
+
+*Data leakage* is when information from outside the training data set is used to create the model
+
+To minimize this, feature engineering should be done in isolation of each resampling iteration.
 
 ### 3.8.3 Putting the process together
