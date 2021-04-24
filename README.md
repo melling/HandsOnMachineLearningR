@@ -5,7 +5,7 @@ Working through this book
 https://bradleyboehmke.github.io/HOML/
 
 - [Chapter 01 Notes: Introduction](chapt01/README.md)
-- [Chapter 02 Notes: Model Process](chapt02/README.md) | [R Code](chap02/chap02.Rmd)
+- [Chapter 02 Notes: Model Process](chapt02/README.md) | [R Code](chap02/chapt02.Rmd)
 - [Chapter 03 Notes: Feature & Target Engineering](chapt03/README.md)
 - [Chapter 04 Notes: Linear Regression](chapt04/README.md)
 - [Chapter 05 Notes: Logistic Regression](chapt05/README.md)
